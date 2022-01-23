@@ -1,0 +1,34 @@
+{
+	"const.document.querySelector": {
+    "prefix": "cqs",
+    "body": ["const $1 = document.querySelector('$2');"],
+    "description": "Puts a new const with an element"
+  },
+	
+	"function.fetch": {
+    "prefix": "ff",
+    "body": [
+			"function ${1:name}() {",
+			"  fetch('${2:url}')",
+			"    .then(response => response.json())",
+			"    .then(data => {",
+			"      $0",	
+			"    });",
+			"}"
+		],
+    "description": "Fetch without params"
+  },
+
+	"const.arrow-function": {
+    "prefix": "cf",
+    "body": [
+      
+			"const $1 = () => {};"
+    ],
+    "description": "Puts a new const with an querySelectorAll"
+  }
+}
+
+
+
+

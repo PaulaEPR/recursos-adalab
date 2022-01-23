@@ -1,0 +1,52 @@
+{
+	"react.component": {
+		"prefix": "reactcomp",
+		"body": [
+			"const ${1:name} = () => {",
+			"  return (",
+			"    <>",
+			"    $0",
+			"    </>",
+			"  );",
+			"}",
+			"",
+			"export default ${1:name}"
+		],
+		"description": "Component"
+	},
+	"React state variable 1": {
+		"prefix": "varstate",
+		"body": "const [${1}, set${1/(.)(.*)/${1:/upcase}${2}/}] = useState('${2}');"
+	},
+	"react.fetch-1": {
+		"prefix": "rf1",
+		"body": [
+			"const ${1:name} = () => {",
+			"  return fetch('${2:url}')",
+			"    .then(response => response.json())",
+			"    .then(response => {",
+			"      const result = response.map(item => {",
+			"        return {",
+			"          ${3:property}: item.${3:property},",
+			"        };",
+			"      });",
+			"      return result;",
+			"    });",
+			"};",
+			"",
+			"export default ${1:name};"
+		],
+		"description": "React Fetch archive api.js"
+	},
+	"react.fetch-2": {
+		"prefix": "rf2",
+		"body": [
+			"useEffect(() => {",
+			"  ${1:functionFetch}().then((response) => {",
+			"    ${2:setVarState}(response)",
+			"  });",
+			"}, []);"
+		],
+		"description": "React Fetch useEffect archive App.js"
+	}
+}
